@@ -1,0 +1,128 @@
+{{> Header}}
+
+	<header>
+
+		<div class="mobile-nav visible-xs navbar-fixed-top">
+
+			<button type="button" data-toggle="collapse" data-target=".menu-collapse" class="menu-btn btn btn-primary">
+
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="glyphicon glyphicon-th-list"></span>
+				only at NAU
+					
+			</button>
+
+			<div class="collapse menu-collapse">
+
+				<ul class="category-nav nav nav-stacked">
+
+					<li><a href="category.html">SHARE YOUR STORY <i class="icon-chevron-right" style="color:#6da3bf;"></i></a></li>
+					<li><a href="category.html">VOLUNTEER <i class="icon-chevron-right" style="color:#ef9616;"></i></a></li>
+					<li><a href="category.html">ATTEND AN EVENT <i class="icon-chevron-right" style="color:#a87d99;"></i></a></li>
+					<li><a href="about.html" style="padding-right:0px">ABOUT THE CAMPAIGN <i class="icon-chevron-right" style="color:#fff;"></i></a></li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+
+		<div id="article-bg-picture" class="border-green">
+			<img src="{{ArticleImage.Src}}" alt="" class="img-responsive"/>
+		</div>
+	
+		<div class="title-container article">
+
+			<div class="container" style="position:relative;">
+
+					<h1 class="hidden-xs">only at NAU</h1>
+
+					<img src="assets/img/nau-campaign-logo.png" alt="" title=""/>
+
+			</div>
+
+		</div>
+
+	</header>
+
+
+	<section id="main" class="container">
+
+		<article>
+
+			<h1 class="article-title article">
+				{{LongTitle}}
+			</h1>
+
+			<hr class="green lg hidden-xs" />
+
+			<p class="overview">
+				{{{Summary}}}
+			</p>
+
+			<hr class="green lg" />
+
+			<section class="two-col-content row">
+
+				<div class="left-content col-xs-12 col-sm-9">
+
+					<div class="left-content-content">
+						{{{MainContent}}}
+					</div>
+
+					<hr class="green lg"/>
+
+					{{#CallToAction}}
+					<div class="left-content-cta">
+						<h3>
+
+							<a href="{{Link.Href}}">
+							{{Link.Text}}
+							<i class="icon-chevron-right"></i>
+							</a>
+
+						</h3>
+						<p>
+							{{{MainContent}}}							
+						</p>
+					</div>
+					{{/CallToAction}}
+
+				</div>
+
+				<div class="related-bar">
+
+					<div class="side-nav-parent article col-xs-12 col-sm-3">
+
+						<nav class="side-nav article nav nav-stacked">
+							<li><a href="#"><div><i class="icon-comment"></i>&nbsp;</div>SHARE YOUR STORY</a></li>
+							<li><a href="#"><div><i class="icon-user"></i></div>VOLUNTEER</a></li>
+							<li><a href="#"><div><i class="icon-calendar"></i></div>ATTEND AN EVENT</a></li>
+							<li><a href="#"><div><i class="icon-heart"></i></div>GIVE</a></li>
+						</nav>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-3 hidden-xs">
+
+						{{#RelatedArticles}}
+							<div class="img-container">
+								<img src="{{SmallThumbnail.Src}}" alt="{{ShortTitle}}" />
+							</div>
+						{{/RelatedArticles}}
+
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+		</article>
+
+
+	</section>
+
+{{> Footer}}

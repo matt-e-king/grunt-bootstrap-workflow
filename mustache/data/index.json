@@ -1,0 +1,18 @@
+{
+	"MainContent" : "<p>Mauris quis <a href=&quot;#&quot;>mollis sem. Sed vitae</a> magna est. Proin consectetur nec nunc vitae vestibulum. Vestibulum commodo orci eget diam sagittis, ut mattis nisi rhoncus. In pharetra leo nec cursus dignissim. Curabitur ut porttitor nulla. Cras tristique elementum magna eget vulputate. Cras laoreet, sem ut feugiat rhoncus, nisi justo convallis sem, in euismod est metus non turpis. Maecenas tincidunt magna malesuada augue facilisis sollicitudin. Quisque blandit nibh in elit convallis, sodales ornare orci sagittis. Donec at ante et sapien semper tincidunt. Proin mollis posuere ante vel euismod. Aliquam vitae aliquam nunc, dapibus ornare leo. Nulla vel sodales lacus, et facilisis purus.</p><blockquote>&quot;Mauris quis mollis sem. Sed vitae magna est. Proin consectetur nec nunc vitae vestibulum. Vestibulum commodo orci eget diam sagittis, ut mattis nisi rhoncus.&quot;</blockquote><p>liquam erat volutpat. Suspendisse id iaculis augue. Nulla dictum eros sit amet vehicula lacinia. Proin vitae odio nec risus lobortis vestibulum ac et lorem. Etiam auctor <a href=&quot;#&quot;>arcu in sem porta</a> varius. Sed tincidunt erat vel lacus eleifend, eget congue diam pulvinar. Sed vitae erat dapibus nisi lobortis tincidunt. Proin non mauris ante. Quisque consectetur at mi vel auctor. Integer mollis, mauris eget feugiat auctor, orci felis convallis mauris, sit amet volutpat mi sem sit amet nunc.</p>",
+	"FeaturedVideo" : "//player.vimeo.com/video/11392027",
+	"FeaturedGallery" : [
+		{
+			"SmallThumbnail" : {
+				"Src" : "assets/img/article2.jpg",
+				"Alt" : "Image 1 Alternate Text"
+			}
+		},
+		{
+			"SmallThumbnail" : {
+				"Src" : "assets/img/article3.jpg",
+				"Alt" : "Image 3 Alternate Text"
+			}
+		}
+	]
+}

@@ -1,0 +1,113 @@
+{{> Header}}
+
+	<header>
+
+		<div class="mobile-nav visible-xs navbar-fixed-top">
+
+			<button type="button" data-toggle="collapse" data-target=".menu-collapse" class="menu-btn btn btn-primary">
+
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="glyphicon glyphicon-th-list"></span>
+				only at NAU
+					
+			</button>
+
+			<div class="collapse menu-collapse">
+
+				<ul class="category-nav nav nav-stacked">
+
+					<li><a href="category.html">SHARE YOUR STORY <i class="icon-chevron-right" style="color:#6da3bf;"></i></a></li>
+					<li><a href="category.html">VOLUNTEER <i class="icon-chevron-right" style="color:#ef9616;"></i></a></li>
+					<li><a href="category.html">ATTEND AN EVENT <i class="icon-chevron-right" style="color:#a87d99;"></i></a></li>
+					<li><a href="about.html" style="padding-right:0px">ABOUT THE CAMPAIGN <i class="icon-chevron-right" style="color:#fff;"></i></a></li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<img src="assets/img/old_main.jpg" alt="" title="" class="img-responsive visible-xs"/>
+
+	</header>
+
+	<div id="bg-picture" class="hidden-xs">
+
+		<div class="title-container homepage">
+
+			<h1>only at NAU</h1>
+			<p>The pines and peaks of Northern Arizona<br />inspire ground-breaking research<br />and a passion for the outdoors</p>
+
+			<img src="assets/img/nau-campaign-logo.png" alt="" title="" />
+
+		</div>
+
+	</div>
+
+	<section id="main" class="homepage visible-xs">
+
+		<div class="featured article-header container">
+			<h2><i class="icon-file-text"></i> Featured Story</h2>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 left-content homepage">
+					{{{MainContent}}}
+				</div>
+			</div>
+
+		</div>
+
+		<div class="featured images-header container">
+			<h2><i class="icon-camera"></i> Featured Gallery</h2>
+		</div>
+
+				{{#FeaturedGallery}}
+					<div class="img-container">
+						<img src="{{SmallThumbnail.Src}}" alt="{{SmallThumbnail.Alt}}" />
+					</div>
+				{{/FeaturedGallery}}
+
+
+		<div class="featured video-header container">
+			<h2><i class="icon-facetime-video"></i> Featured Video</h2>
+		</div>
+
+					<div class="nau-video">
+						<iframe src="{{FeaturedVideo}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+
+	</section>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			var circleObjs = [
+					{
+						type : 'camera'
+						, x : '25%'
+						, y : '10%'
+						, icon : 'icon-camera'
+					},
+					{
+						type : 'article'
+						, x : '10%'
+						, y : '35%'
+						, icon : 'icon-file-text'
+					}, 
+					{
+						type : 'video'
+						, x : '65%'
+						, y : '65%'
+						, icon : 'icon-facetime-video'
+					}
+				];
+
+			var animationInstance = new homePageAnimation(circleObjs);
+		});
+
+	</script>
+
+{{> Footer}}

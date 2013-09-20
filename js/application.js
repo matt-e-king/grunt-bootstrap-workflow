@@ -1,0 +1,1 @@
+//use this js page for custom javascript program for your application

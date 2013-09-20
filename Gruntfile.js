@@ -53,9 +53,17 @@ module.exports = function(grunt) {
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
-          'js/affix.js'
+          'js/affix.js',
+          'js/application.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'assets/js/application.js'
+      },
+      styles: {
+        src: [
+          'assets/css/bootstrap.min.css',
+          'assets/css/custom.min.css'
+        ],
+        dest: 'assets/css/styles.css'
       }
     },
 
@@ -65,7 +73,7 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['<%= concat.bootstrap.dest %>'],
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'assets/js/application.min.js'
       }
     },
 
@@ -75,25 +83,44 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/bootstrap.css'
+        dest: 'assets/css/bootstrap.css'
       },
       min: {
         options: {
           compress: true
         },
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/bootstrap.min.css'
+        dest: 'assets/css/bootstrap.min.css'
       },
       theme: {
         src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.css'
+        dest: 'assets/css/custom.css'
       },
       theme_min: {
         options: {
           compress: true
         },
         src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+        dest: 'assets/css/custom.min.css'
+      }
+    },
+
+
+    mcompile: {
+      testFiles: {
+        options: {
+            partialsRoot: 'mustache/partials/',
+            partialsArray: {
+              Header : "header.mustache",
+              Footer : "footer.mustache"
+            }
+        },
+        files: {
+            'article.html' : ['mustache/pages/article.mustache'],
+            'about.html' : ['mustache/pages/about.mustache'],
+            'index.html' : ['mustache/pages/index.mustache'],
+
+        },
       }
     },
 
@@ -101,7 +128,7 @@ module.exports = function(grunt) {
       fonts: {
         expand: true,
         src: ["fonts/*"],
-        dest: 'dist/'
+        dest: 'assets/'
       }
     },
 
@@ -145,7 +172,7 @@ module.exports = function(grunt) {
       },
       recess: {
         files: 'less/*.less',
-        tasks: ['recess']
+        tasks: ['recess', 'concat:styles']
       }
     }
   });
@@ -164,6 +191,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('browserstack-runner');
+  grunt.loadNpmTasks('grunt-mcompile');
 
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
@@ -182,8 +210,13 @@ module.exports = function(grunt) {
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
+  //Compile theme styles and bootstrap style and push to assets
+  grunt.registerTask('dist-styles', ['concat:styles']);
+
   // CSS distribution task.
   grunt.registerTask('dist-css', ['recess']);
+
+  grunt.registerTask('mc', ['mcompile']);
 
   // Fonts distribution task.
   grunt.registerTask('dist-fonts', ['copy']);
